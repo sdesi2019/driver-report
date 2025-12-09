@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цифровой профиль: Водитель и ТС</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #004d99;
+            border-bottom: 3px solid #004d99;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #333;
+            margin-top: 30px;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed #ccc;
+        }
+        .section {
+            margin-bottom: 25px;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fcfcfc;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .data-table th, .data-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .data-table th {
+            background-color: #eaf1f8;
+            color: #004d99;
+            width: 40%;
+            font-weight: bold;
+        }
+        .data-table tr:hover {
+            background-color: #f9f9f9;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .status-рабоает {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .summary {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            border-radius: 8px;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>📋 Цифровой профиль: Водитель и Транспортное Средство</h1>
+    
+    <div class="summary">
+        <p><strong>Резюме для руководства:</strong> Водитель **Ахметов А.А.** (Стаж: 5 лет, Категория D, Без мед. ограничений) закреплен за автомобилем **KIA Optima** (ГРНЗ KZ 123 UD, 2017 г.в.). Оба актива находятся в статусе **[Работает]**.</p>
+    </div>
+
+    <div class="section">
+        <h2>👤 Цифровой паспорт водителя: Ахметов А. А.</h2>
+        <table class="data-table">
+            <tr>
+                <th>ФИО</th>
+                <td>Ахметов Ахмет Ахметович</td>
+            </tr>
+            <tr>
+                <th>ИИН</th>
+                <td>010101010101</td>
+            </tr>
+            <tr>
+                <th>Возраст</th>
+                <td>24</td>
+            </tr>
+            <tr>
+                <th>Статус</th>
+                <td><span class="status-badge status-рабоает">Работает</span></td>
+            </tr>
+            <tr>
+                <th>Должность</th>
+                <td>водитель 1-й категорий</td>
+            </tr>
+            <tr>
+                <th>Категория (ВУ)</th>
+                <td>D</td>
+            </tr>
+            <tr>
+                <th>Водительский стаж</th>
+                <td>5 лет</td>
+            </tr>
+            <tr>
+                <th>Закрепленное ТС</th>
+                <td>черный KIA K5 500UD</td>
+            </tr>
+            <tr>
+                <th>Мед. ограничения</th>
+                <td>Нет</td>
+            </tr>
+            <tr>
+                <th>Контактный телефон</th>
+                <td>+7 777 777 77 77</td>
+            </tr>
+            <tr>
+                <th>Экстренный телефон</th>
+                <td>+7 777 777 77 76 (Брат)</td>
+            </tr>
+            <tr>
+                <th>Дата принятия на учет</th>
+                <td>01.01.2025</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>🚗 Цифровой паспорт автомобиля: KIA Optima</h2>
+        <table class="data-table">
+            <tr>
+                <th>ГРНЗ</th>
+                <td>KZ 123 UD</td>
+            </tr>
+            <tr>
+                <th>VIN</th>
+                <td>KNAGT4L36H5078567</td>
+            </tr>
+            <tr>
+                <th>Марка / Модель</th>
+                <td>Kia / Optima</td>
+            </tr>
+            <tr>
+                <th>Классификация</th>
+                <td>легковой автомобиль</td>
+            </tr>
+            <tr>
+                <th>Тип ТС</th>
+                <td>седан</td>
+            </tr>
+            <tr>
+                <th>Год выпуска</th>
+                <td>2017</td>
+            </tr>
+            <tr>
+                <th>Статус</th>
+                <td><span class="status-badge status-рабоает">В работе</span></td>
+            </tr>
+            <tr>
+                <th>Дата принятия на учет</th>
+                <td>05.04.2017</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
