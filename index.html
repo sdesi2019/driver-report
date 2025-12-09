@@ -176,7 +176,7 @@
             justify-content: center;
             color: #6c757d;
             border-radius: 4px;
-            overflow: hidden; /* Важно для обрезки изображения */
+            overflow: hidden; 
         }
         .value-display {
             display: flex;
@@ -294,6 +294,22 @@
             padding: 30px 20px;
             font-size: 0.9em;
         }
+
+        /* Custom style for end images (Original Size) */
+        .end-images {
+            text-align: center;
+            padding: 40px 20px; /* Увеличиваем отступ */
+            background-color: #f8f9fa; /* Светлый фон, чтобы выделить */
+        }
+        .end-images img {
+            width: auto; /* Оригинальный размер */
+            height: auto; /* Оригинальный размер */
+            max-width: 100%; /* Гарантирует, что изображение не выйдет за пределы контейнера */
+            margin: 0 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -363,7 +379,7 @@
                         <h4>Динамика остаточной стоимости (ТС: Toyota Camry)</h4>
                         
                         <div class="photo-container">
-                             <img src="паспорт авто.jpeg" alt="Фото автомобиля Toyota Camry">
+                            <img src="паспорт авто.jpeg" alt="Фото автомобиля Toyota Camry">
                         </div>
                         
                         <div class="chart-placeholder" style="background-color: transparent; border: 1px solid #dee2e6;">
@@ -386,7 +402,7 @@
                         <h4>Цифровой Паспорт Водителя</h4>
 
                          <div class="photo-container">
-                             <img src="Паспорт водителя.jpeg" alt="Фото водителя Ахметова А.А." style="border: 3px solid #28a745;">
+                            <img src="Паспорт водителя.jpeg" alt="Фото водителя Ахметова А.А." style="border: 3px solid #28a745;">
                         </div>
 
                         <div class="driver-status">
@@ -444,7 +460,13 @@
             </div>
         </div>
     </section>
-
+    
+    <div class="end-images">
+        <h3>Примеры исходных данных</h3>
+        <p style="color: #6c757d; margin-bottom: 20px;">Отображаются в исходном размере файла (Максимум 100% ширины экрана).</p>
+        <img src="водитель.jpeg" alt="Дополнительное фото водителя" title="водитель.jpeg">
+        <img src="авто.jpeg" alt="Дополнительное фото автомобиля" title="авто.jpeg">
+    </div>
     <section id="cta-section" style="padding: 50px 20px; text-align: center; background-color: #e2e6ea;">
         <h2 style="color: #007bff; font-size: 2em;">Время переходить к управлению будущим.</h2>
         <p style="font-size: 1.2em; margin-bottom: 30px;">
