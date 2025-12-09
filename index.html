@@ -3,186 +3,461 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Цифровой профиль: Водитель и ТС</title>
+    <title>Цифровой Паспорт Автомобиля и Водителя | B2B</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f7f6;
+            padding: 0;
+            background-color: #f4f6f8;
             color: #333;
         }
-        .container {
+        .header {
+            background-color: #ffffff;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #007bff;
+            display: flex;
+            align-items: center;
+        }
+        .logo span {
+            margin-left: 10px;
+        }
+        .main-hero {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero-container {
             max-width: 900px;
-            margin: auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
         }
-        h1 {
-            color: #004d99;
-            border-bottom: 3px solid #004d99;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
+        .hero-container h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            font-weight: 900;
         }
-        h2 {
+        .hero-container p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #ffc107;
             color: #333;
-            margin-top: 30px;
-            padding-bottom: 5px;
-            border-bottom: 1px dashed #ccc;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
-        .section {
-            margin-bottom: 25px;
-            border: 1px solid #e0e0e0;
-            padding: 20px;
+        .cta-button:hover {
+            background-color: #e0a800;
+            transform: translateY(-2px);
+        }
+
+        /* FEATURES Section */
+        .features-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2.2em;
+            color: #007bff;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .section-subtitle {
+            font-size: 1.1em;
+            color: #6c757d;
+            margin-bottom: 40px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background-color: #ffffff;
             border-radius: 8px;
-            background-color: #fcfcfc;
+            padding: 25px;
+            text-align: left;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid #007bff;
         }
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
+        .feature-card h3 {
+            font-size: 1.3em;
+            color: #007bff;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        /* DASHBOARD Section */
+        .dashboard-section {
+            padding: 60px 20px;
+            background-color: #ffffff;
+            border-top: 1px solid #dee2e6;
+        }
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .dashboard-title {
+            text-align: center;
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        /* Left Column - Main Charts and Driver Profile */
+        .main-chart-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 30px;
+        }
+        .chart-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+        }
+        .chart-card h4 {
+            font-size: 1.2em;
+            color: #007bff;
+            margin-top: 0;
+            border-bottom: 1px dashed #dee2e6;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        /* Styling for Photos */
+        .photo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .photo-container img {
+            max-width: 100px;
+            max-height: 100px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 3px solid #007bff;
+        }
+        .chart-placeholder {
+            height: 150px; 
+            background-color: #e2e6ea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            border-radius: 4px;
+            overflow: hidden; /* Важно для обрезки изображения */
+        }
+        .value-display {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
             margin-top: 15px;
         }
-        .data-table th, .data-table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
+        .value-item h5 {
+            margin: 0;
+            font-size: 1.5em; 
+            color: #28a745;
         }
-        .data-table th {
-            background-color: #eaf1f8;
-            color: #004d99;
-            width: 40%;
+        .value-item p {
+            margin: 5px 0 0 0;
+            font-size: 0.85em;
+            color: #6c757d;
+        }
+
+        /* Driver Profile Specific Styles (inside main-chart-area) */
+        .driver-card {
+            border-left: 5px solid #28a745; 
+        }
+        .driver-card h4 {
+            color: #28a745;
+        }
+        .driver-status {
+            font-size: 1.1em;
             font-weight: bold;
+            color: #28a745;
+            margin-bottom: 15px;
         }
-        .data-table tr:hover {
-            background-color: #f9f9f9;
+        .driver-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 0.9em;
         }
-        .status-badge {
+        .info-label {
+            color: #6c757d;
+        }
+        .info-value {
+            font-weight: 500;
+        }
+        .risk-badge {
             display: inline-block;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
+            background-color: #ffc107;
+            color: #333;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-top: 10px;
         }
-        .status-рабоает {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+        
+        /* Sidebar styles remain the same */
+        .sidebar-controls {
+            display: grid;
+            grid-template-rows: auto auto auto; 
+            gap: 30px;
         }
-        .summary {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #fff3cd;
-            border: 1px solid #ffeeba;
+        .sidebar-card {
+            background-color: #f8f9fa;
             border-radius: 8px;
-            color: #856404;
+            padding: 25px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+        }
+        .sidebar-card h4 {
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 0;
+            border-bottom: 1px dashed #dee2e6;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .component-list li {
+            list-style: none;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .component-list ul {
+            padding: 0;
+            margin: 0;
+        }
+        .component-status {
+            font-weight: bold;
+            color: #28a745; 
+        }
+        .component-status.low {
+            color: #ffc107;
+        }
+        .ai-recommendation {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .ai-recommendation button {
+            background-color: #17a2b8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .ai-recommendation button:hover {
+            background-color: #138496;
+        }
+        
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                ⚙️<span>Цифровой Паспорт Автомобиля</span>
+            </div>
+            <nav>
+                <a href="#features-section" style="text-decoration: none; color: #333; margin-left: 20px;">Возможности</a>
+                <a href="#dashboard-section" style="text-decoration: none; color: #333; margin-left: 20px;">Dashboard</a>
+                <a href="#cta-section" style="text-decoration: none; color: #333; margin-left: 20px;">Демо</a>
+            </nav>
+        </div>
+    </header>
 
-    <h1>📋 Цифровой профиль: Водитель и Транспортное Средство</h1>
-    
-    <div class="summary">
-        <p><strong>Резюме для руководства:</strong> Водитель **Ахметов А.А.** (Стаж: 5 лет, Категория D, Без мед. ограничений) закреплен за автомобилем **KIA Optima** (ГРНЗ KZ 123 UD, 2017 г.в.). Оба актива находятся в статусе **[Работает]**.</p>
-    </div>
+    <section class="main-hero">
+        <div class="hero-container">
+            <h1>Управляйте будущим вашего автопарка</h1>
+            <p>
+                Интеллектуальная платформа для проактивного прогнозирования ТО и полной финансовой прозрачности.
+            </p>
+            <a href="#cta-section" class="cta-button">ЗАПРОСИТЬ ДЕМО-ВЕРСИЮ</a>
+        </div>
+    </section>
 
-    <div class="section">
-        <h2>👤 Цифровой паспорт водителя: Ахметов А. А.</h2>
-        <table class="data-table">
-            <tr>
-                <th>ФИО</th>
-                <td>Ахметов Ахмет Ахметович</td>
-            </tr>
-            <tr>
-                <th>ИИН</th>
-                <td>010101010101</td>
-            </tr>
-            <tr>
-                <th>Возраст</th>
-                <td>24</td>
-            </tr>
-            <tr>
-                <th>Статус</th>
-                <td><span class="status-badge status-рабоает">Работает</span></td>
-            </tr>
-            <tr>
-                <th>Должность</th>
-                <td>водитель 1-й категорий</td>
-            </tr>
-            <tr>
-                <th>Категория (ВУ)</th>
-                <td>D</td>
-            </tr>
-            <tr>
-                <th>Водительский стаж</th>
-                <td>5 лет</td>
-            </tr>
-            <tr>
-                <th>Закрепленное ТС</th>
-                <td>черный KIA K5 500UD</td>
-            </tr>
-            <tr>
-                <th>Мед. ограничения</th>
-                <td>Нет</td>
-            </tr>
-            <tr>
-                <th>Контактный телефон</th>
-                <td>+7 777 777 77 77</td>
-            </tr>
-            <tr>
-                <th>Экстренный телефон</th>
-                <td>+7 777 777 77 76 (Брат)</td>
-            </tr>
-            <tr>
-                <th>Дата принятия на учет</th>
-                <td>01.01.2025</td>
-            </tr>
-        </table>
-    </div>
+    <section id="features-section" class="features-section">
+        <h2 class="section-title">Ключевые возможности</h2>
+        <p class="section-subtitle">Все инструменты для эффективного управления автопарком в одной платформе.</p>
 
-    <div class="section">
-        <h2>🚗 Цифровой паспорт автомобиля: KIA Optima</h2>
-        <table class="data-table">
-            <tr>
-                <th>ГРНЗ</th>
-                <td>KZ 123 UD</td>
-            </tr>
-            <tr>
-                <th>VIN</th>
-                <td>KNAGT4L36H5078567</td>
-            </tr>
-            <tr>
-                <th>Марка / Модель</th>
-                <td>Kia / Optima</td>
-            </tr>
-            <tr>
-                <th>Классификация</th>
-                <td>легковой автомобиль</td>
-            </tr>
-            <tr>
-                <th>Тип ТС</th>
-                <td>седан</td>
-            </tr>
-            <tr>
-                <th>Год выпуска</th>
-                <td>2017</td>
-            </tr>
-            <tr>
-                <th>Статус</th>
-                <td><span class="status-badge status-рабоает">В работе</span></td>
-            </tr>
-            <tr>
-                <th>Дата принятия на учет</th>
-                <td>05.04.2017</td>
-            </tr>
-        </table>
-    </div>
+        <div class="features-grid">
+            
+            <div class="feature-card">
+                <h3>Прогнозное обслуживание</h3>
+                <p>Используйте ИИ для предсказания потребностей в ТО, сокращая простои и экономя на ремонте.</p>
+            </div>
 
-</div>
+            <div class="feature-card">
+                <h3>Финансовая прозрачность</h3>
+                <p>Отслеживайте амортизацию и остаточную стоимость в реальном времени для точного финпланирования.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Цифровой паспорт</h3>
+                <p>Надежно храните и управляйте всей информацией о **ТС и Водителе** в едином цифровом формате.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Простой импорт данных</h3>
+                <p>Легко интегрируйте существующие данные вашего автопарка через API и готовые коннекторы.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="dashboard-section" class="dashboard-section">
+        <div class="dashboard-container">
+            <h2 class="dashboard-title">Центр управления автопарком</h2>
+            <p class="section-subtitle" style="margin-bottom: 50px;">Визуализируйте данные, получайте инсайты и принимайте решения на основе актуальной информации.</p>
+
+            <div class="dashboard-layout">
+                
+                <div class="main-chart-area">
+                    
+                    <div class="chart-card">
+                        <h4>Динамика остаточной стоимости (ТС: Toyota Camry)</h4>
+                        
+                        <div class="photo-container">
+                             <img src="паспорт авто.jpeg" alt="Фото автомобиля Toyota Camry">
+                        </div>
+                        
+                        <div class="chart-placeholder" style="background-color: transparent; border: 1px solid #dee2e6;">
+                            <img src="Прогноз.jpeg" alt="График Прогноза остаточной стоимости" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px; display: block;">
+                        </div>
+                        
+                        <div class="value-display">
+                            <div class="value-item">
+                                <h5>$45,100</h5>
+                                <p>Остаточная стоимость</p>
+                            </div>
+                            <div class="value-item">
+                                <h5 style="color: #dc3545;">-2.1%</h5>
+                                <p>с прошлого месяца</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-card driver-card">
+                        <h4>Цифровой Паспорт Водителя</h4>
+
+                         <div class="photo-container">
+                             <img src="Паспорт водителя.jpeg" alt="Фото водителя Ахметова А.А." style="border: 3px solid #28a745;">
+                        </div>
+
+                        <div class="driver-status">
+                            ✅ Ахметов А.А. | Допущен к работе
+                        </div>
+                        <div class="driver-info-grid">
+                            <div class="info-label">Срок ВУ:</div><div class="info-value">12.12.2028</div>
+                            <div class="info-label">Мед. допуск:</div><div class="info-value">Действителен до 05.09.2025</div>
+                            <div class="info-label">Нарушения/Штрафы:</div><div class="info-value">3 за год</div>
+                            <div class="info-label">Психофиз. риск:</div><div class="info-value">Умеренный риск <span class="risk-badge">4/10</span></div>
+                        </div>
+                        <h5 style="margin-top: 20px; font-size: 1em; color: #555;">Основные блоки информации:</h5>
+                        <ul class="component-list" style="columns: 2; border: none;">
+                            <li>Личные данные</li>
+                            <li>Водительское удостоверение</li>
+                            <li>Медицина</li>
+                            <li>Транспорт</li>
+                            <li>Обучение</li>
+                            <li>Нарушения (Штрафы/ДТП)</li>
+                            <li>Рейтинг (Жалобы)</li>
+                            <li>Состояние (Усталость)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sidebar-controls">
+                    
+                    <div class="sidebar-card">
+                        <h4>Прогноз экономии и ТО</h4>
+                        <div class="value-display" style="border-bottom: 1px dashed #eee; padding-bottom: 15px;">
+                            <div class="value-item">
+                                <h5 style="color: #007bff;">$4,850 / мес</h5>
+                                <p>Прогноз экономии (Проактивное ТО)</p>
+                            </div>
+                        </div>
+                        <h5 style="font-size: 1em; margin-top: 15px;">Состояние узлов (ТС)</h5>
+                        <ul class="component-list">
+                            <li><span>Двигатель</span><span class="component-status">85%</span></li>
+                            <li><span>Тормоза</span><span class="component-status">92%</span></li>
+                            <li><span>Подвеска</span><span class="component-status">78%</span></li>
+                            <li><span>Шины</span><span class="component-status low">65%</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>Прогнозное обслуживание (ИИ)</h4>
+                        <p style="font-size: 0.9em; color: #555;">
+                            Получите рекомендации на основе данных в реальном времени. Требуется замена шин в течение 3 недель.
+                        </p>
+                        <div class="ai-recommendation">
+                            <button>Сгенерировать отчет</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta-section" style="padding: 50px 20px; text-align: center; background-color: #e2e6ea;">
+        <h2 style="color: #007bff; font-size: 2em;">Время переходить к управлению будущим.</h2>
+        <p style="font-size: 1.2em; margin-bottom: 30px;">
+            Запросите бесплатную демонстрацию и сделайте ваш автопарк проактивным и безопасным.
+        </p>
+        <a href="mailto:demo@yourcompany.com" class="cta-button">
+            ✅ ЗАПРОСИТЬ ДЕМО-ВЕРСИЮ
+        </a>
+    </section>
+
+    <footer class="footer">
+        &copy; 2025 Цифровой Паспорт Автомобиля. Все права защищены.
+    </footer>
 
 </body>
 </html>
